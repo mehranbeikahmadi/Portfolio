@@ -317,3 +317,64 @@ $(function() {
 
 });
 
+function setEqualHeights() {
+    const items = document.querySelectorAll('.testimony-wrap');
+    let maxHeight = 0;
+
+    // Reset heights
+    items.forEach(item => (item.style.height = 'auto'));
+
+    // Determine max height
+    items.forEach(item => {
+        const height = item.offsetHeight;
+        if (height > maxHeight) {
+            maxHeight = height;
+        }
+    });
+
+    // Apply max height to all items
+    items.forEach(item => (item.style.height = `${maxHeight}px`));
+}
+
+// Run on load and resize
+$(window).on('load', setEqualHeights);
+$(window).on('resize', setEqualHeights);
+document.addEventListener("DOMContentLoaded", function () {
+    // New names for users
+/*     const newNames = [
+        "Alex Johnson",
+        "Emily Davis",
+        "Michael Brown",
+        "Sophia Williams",
+        "James Wilson",
+        "Olivia Taylor"
+    ]; */
+
+    // Select all testimonial items
+    const nameElements = document.querySelectorAll('.testimony-wrap .name');
+
+    // Loop through and update the names
+    nameElements.forEach((element, index) => {
+        if (newNames[index]) {
+            element.textContent = newNames[index];
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const items = document.querySelectorAll('.testimony-wrap');
+    let maxHeight = 0;
+
+    // Determine the maximum height
+    items.forEach(item => {
+        const height = item.offsetHeight;
+        if (height > maxHeight) {
+            maxHeight = height;
+        }
+    });
+
+    // Apply the maximum height to all items
+    items.forEach(item => {
+        item.style.height = `${maxHeight}px`;
+    });
+});

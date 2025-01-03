@@ -1043,8 +1043,13 @@ h1, h2, h3, h4, h5,
 
 //PROJECT
 .project{
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 	width: 100%;
-	height: 285px;
+	height: 100%; /* Ensures full height within parent container */
+	//height: 285px;
 	margin-bottom: 30px;
 	position: relative;
 	z-index: 0;
